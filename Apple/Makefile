@@ -1,0 +1,3 @@
+
+profile:
+	cp .profile ~/.profile
