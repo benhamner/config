@@ -1,4 +1,5 @@
 
+
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 bind "set completion-ignore-case on"
@@ -17,3 +18,11 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
 alias ~="cd ~"
+
+promptFunc()
+{
+# right before prompting for the next command, save the previous
+# command in a file.
+echo "$(date +%Y-%m-%d--%H-%M-%S) $(hostname) $PWD $(history 1)" >> ~/History/.full_history
+}
+PROMPT_COMMAND=promptFunc
