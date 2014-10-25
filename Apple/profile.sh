@@ -1,4 +1,7 @@
 
+source ~/.git-completion.sh
+source ~/.git-prompt.sh
+PS1='\u@\h \W$(__git_ps1 " (%s)")\$ ' # needed for git prompt
 
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
@@ -26,3 +29,4 @@ promptFunc()
 echo "$(date +%Y-%m-%d--%H-%M-%S) $(hostname) $PWD $(history 1)" >> ~/History/.apple_terminal_history
 }
 PROMPT_COMMAND=promptFunc
+
