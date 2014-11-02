@@ -8,7 +8,7 @@ bind '"\e[B"':history-search-forward
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
-alias edit='subl'
+alias edit='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias f='open -a Finder ./'
 alias julia3='/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'
 alias julia='/Applications/Julia-0.4.0-dev-e22f90edc8.app/Contents/Resources/julia/bin/julia'
