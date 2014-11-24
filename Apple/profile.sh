@@ -4,6 +4,7 @@ source ~/.git-prompt.sh
 PS1='\u@\h \W$(__git_ps1 " (%s)")\$ ' # needed for git prompt
 
 export DataPath=~/Data
+export GITHUB_PATH=~/Git
 
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
