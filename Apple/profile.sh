@@ -14,8 +14,8 @@ bind "set show-all-if-ambiguous on"
 alias edit='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias f='open -a Finder ./'
 alias julia3='/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'
-alias julia='/Applications/Julia-0.4.0-dev-6194e4766c.app/Contents/Resources/julia/bin/julia'
-export PATH=/Applications/Julia-0.4.0-dev-6194e4766c.app/Contents/Resources/julia/bin:$PATH
+alias julia='/Applications/Julia-0.4.0-dev-052f54e0fe.app/Contents/Resources/julia/bin/julia'
+export PATH=/Applications/Julia-0.4.0-dev-052f54e0fe.app/Contents/Resources/julia/bin:$PATH
 
 cd() { builtin cd "$@"; ls; }               
 alias ..='cd ../'
