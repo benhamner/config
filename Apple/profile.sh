@@ -15,7 +15,7 @@ alias edit='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias f='open -a Finder ./'
 alias julia3='/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'
 alias julia='/Applications/Julia-0.4.0-dev-052f54e0fe.app/Contents/Resources/julia/bin/julia'
-export PATH=/Applications/Julia-0.4.0-dev-052f54e0fe.app/Contents/Resources/julia/bin:$PATH
+export PATH=/Users/benhamner/git/config/Apple:/Applications/Julia-0.4.0-dev-052f54e0fe.app/Contents/Resources/julia/bin:$PATH
 
 cd() { builtin cd "$@"; ls; }               
 alias ..='cd ../'
@@ -34,3 +34,13 @@ echo "$(date +%Y-%m-%d--%H-%M-%S) $(hostname) $PWD $(history 1)" >> ~/History/.a
 }
 PROMPT_COMMAND=promptFunc
 
+kpython(){
+  docker run -v $PWD:/tmp/working -w=/tmp/working --rm -it kaggle/python python "$@"
+}
+ikpython() {
+  docker run -v $PWD:/tmp/working -w=/tmp/working --rm -it kaggle/python ipython
+}
+kjupyter() {
+  (sleep 3 && open "http://$(docker-machine ip docker2):8888")&
+  docker run -v $PWD:/tmp/working -w=/tmp/working -p 8888:8888 --rm -it kaggle/python jupyter notebook --no-browser --ip="\*" --notebook-dir=/tmp/working
+}
