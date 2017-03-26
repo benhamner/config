@@ -1,0 +1,10 @@
+#!/bin/bash
+
+launchbrowser(){
+  sleep 3s
+  open http://localhost:8888  
+}
+
+launchbrowser &
+
+docker run -v "$PWD:/home/jovyan/work" -p 8888:8888 -w=/home/jovyan/work --rm -i benhamner/python start-notebook.sh "$@"
